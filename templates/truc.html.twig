@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %} {% block body %}
+
+{# Depuis le controller #}
+{{ maDate }}
+{# Depuis TWIG, mot-clé now + date(format souhaité) #}
+{{"now"|date("d/mY")}}
+<table class="table table-striped table-hover w-50 mx-auto mt-5">
+  <h2 class="text-center">HEROES</h2>
+
+  <thead>
+    <tr class="text-center table-dark">
+      <th scope="col">Name</th>
+      <th scope="col">Strenght</th>
+    </tr>
+  </thead>
+  <tbody class="text-center">
+
+    {% for hero in heroes %}
+    </tr class="table-secondary">
+        <td class=" fw-bold" > {{ hero.nom }} </td>
+        <td class=" fw-bold" > {{ hero.force }} </td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
